@@ -1,0 +1,100 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f4f5f7;--card:#fff;--text:#16191d;--muted:#667085;--line:#e4e7ec;--red:#b91c1c;--gold:#d4a54a;--ok:#16a34a;--bad:#dc2626;--soft:#fdf2f2}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1215;--card:#181c21;--text:#e9ecef;--muted:#98a2b3;--line:#272d35;--red:#ef4444;--soft:#2a1717}}
+:root[data-theme="dark"]{--bg:#0f1215;--card:#181c21;--text:#e9ecef;--muted:#98a2b3;--line:#272d35;--red:#ef4444;--soft:#2a1717}
+*,*:before,*:after{box-sizing:inherit}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 "Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+[hidden]{display:none!important}
+h1,h2,h3{margin:0}h2{font-size:17px}h3{font-size:14px}
+input,select,button,textarea{font:inherit;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--red);outline-offset:-1px}
+button{cursor:pointer;transition:.15s}button:hover{border-color:var(--red)}
+button.p{background:var(--red);border-color:var(--red);color:#fff;font-weight:600}button.p:hover{filter:brightness(1.1)}
+button.d{color:var(--bad)}button.s{padding:5px 10px;font-size:13px}
+label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin:0 0 5px}
+.logo{background:#fff;border-radius:12px;padding:5px;flex:none}.logo img{width:100%;height:100%;object-fit:contain;display:block}
+/* landing */
+.hero{background:radial-gradient(circle at 80% 0,rgba(212,165,74,.35),transparent 45%),linear-gradient(160deg,#450a0a,#991b1b 55%,#b91c1c);color:#fff;text-align:center;padding:56px 16px 110px}
+.hero .logo{width:128px;height:120px;margin:0 auto 22px;border-radius:22px;padding:10px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.hero h1{font-size:clamp(26px,5vw,38px);letter-spacing:-.5px}
+.hero .bar{width:64px;height:4px;background:var(--gold);border-radius:4px;margin:14px auto 0}
+.login{max-width:430px;margin:-70px auto 40px;padding:0 16px}
+.login .card{padding:24px;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.login h2{margin-bottom:16px}.login input,.login select{width:100%;margin-bottom:14px}
+.login .p{width:100%;padding:12px;font-size:15px}
+.feat{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 10px}
+.feat span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:13px;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);text-align:center;margin:0}
+.err{color:var(--bad);font-size:13px;min-height:20px}
+/* dashboard */
+.top{background:linear-gradient(135deg,#450a0a,#991b1b 60%,#b91c1c);color:#fff}
+.top .in{max-width:1000px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.top .logo{width:50px;height:46px}.top h1{font-size:16px}.top small{opacity:.85;display:block}
+.top button{margin-left:auto;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff}
+nav{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav .in{max-width:1000px;margin:0 auto;display:flex;gap:4px;padding:0 10px;overflow-x:auto}
+nav a{text-decoration:none;display:block;border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:13px 14px;color:var(--muted);font-weight:600;white-space:nowrap}
+nav a.on{color:var(--red);border-bottom-color:var(--red)}
+main{max-width:1000px;margin:0 auto;padding:20px 16px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;border-left:4px solid var(--gold)}
+.stat span{font-size:12.5px;color:var(--muted)}.stat b{display:block;font-size:24px;letter-spacing:-.5px}
+.lead{background:linear-gradient(120deg,var(--soft),var(--card));border:1px solid var(--line);border-left:4px solid var(--red);border-radius:16px;padding:14px 18px;margin-bottom:16px}
+.lead small{color:var(--muted)}.lead b{font-size:18px}
+.two{display:grid;grid-template-columns:240px 1fr;gap:20px;align-items:center}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+.donut{position:relative;max-width:240px;margin:0 auto}.donut svg{display:block;width:100%;transform:rotate(-90deg)}
+.donut div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donut b{font-size:24px}.donut span{font-size:12px;color:var(--muted)}
+.rk{margin-bottom:14px}.rk .h{display:flex;justify-content:space-between;gap:8px;margin-bottom:5px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:8px}
+.track{height:10px;background:var(--line);border-radius:6px;overflow:hidden}.track i{display:block;height:100%;border-radius:6px;transition:width .5s}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.grow{flex:1;min-width:150px}
+.tot{background:var(--soft);border-radius:12px;padding:12px 16px;margin:16px 0;display:flex;gap:24px;flex-wrap:wrap}
+.tot b{font-size:20px;display:block}.tot span{font-size:12.5px;color:var(--muted)}
+.cl{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.cl:last-child{border:0}.no{width:36px;height:36px;border-radius:10px;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.cl .n{flex:1;font-weight:600}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+th:first-child,td:first-child{text-align:left}td:last-child{text-align:right}tfoot td{font-weight:700;background:var(--soft)}
+.empty{text-align:center;padding:36px 12px;color:var(--muted)}.empty h2{color:var(--text);margin-bottom:6px}
+.empty .row{justify-content:center;margin-top:16px}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
+.mbox{background:var(--card);border-radius:16px;padding:20px;width:100%;max-width:440px}
+.mbox input,.mbox textarea{width:100%;margin-top:10px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#16191d;color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+
+/* ===== Tambahan untuk versi Laravel ===== */
+.btn{display:inline-block;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:var(--text);background:var(--card);font-weight:500}
+.btn:hover{border-color:var(--red)}.btn.p{background:var(--red);border-color:var(--red);color:#fff;font-weight:600}.btn.s{padding:5px 10px;font-size:13px}.btn.d{color:var(--bad)}
+.top .btn{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff;margin-left:auto}
+.top form{margin:0}
+.flash{border-radius:12px;padding:11px 16px;margin-bottom:16px;background:#dcfce7;color:#14532d;border:1px solid #86efac}
+.flash.bad{background:#fee2e2;color:#7f1d1d;border-color:#fca5a5}
+@media (prefers-color-scheme:dark){.flash{background:#14291c;color:#86efac;border-color:#1f4d2e}.flash.bad{background:#2d1616;color:#fca5a5;border-color:#5b2323}}
+.inline{display:inline}.inline input{width:auto}
+.hint{font-size:12.5px;color:var(--muted)}
+.check{display:flex;gap:8px;align-items:center;font-weight:400;color:var(--text)}.check input{width:auto}
+
+/* ===== Latar belakang gambar kotak suara ===== */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:url('/images/kotak-suara.jfif') no-repeat center / 520px;
+    opacity:.12;
+    mix-blend-mode:multiply;
+    pointer-events:none;
+}
+@media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) body::before{opacity:.06;mix-blend-mode:normal}
+}
+:root[data-theme="dark"] body::before{opacity:.06;mix-blend-mode:normal}
+
+/* Kartu agak transparan supaya gambar sedikit tembus */
+.card,.stat,.lead{background:color-mix(in srgb,var(--card) 88%,transparent)}
